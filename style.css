@@ -1,0 +1,55 @@
+.header{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    ;
+   
+    
+}
+
+.body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: 750px;
+    background-color: bisque;
+    padding-top: 30px;
+    padding-left: 30px;
+}
+.footer{
+    border: 1px solid black;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+button{
+    height: 30px;
+    width: 50px;
+    border: none;
+    background-color:aquamarine;
+}
+.bag{
+    height:60px;
+    width: auto;
+}
+.arrow{
+    border: 1px solid black;
+    width: 70px;
+    height: 30px;
+    background-color: aquamarine;
+}
+.number{
+    border: 1px solid green;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgb(21, 0, 128);
+    color: white;
+    text-align: center;
+    padding: 2px;
+    
+}
+.label{
+    border: 1px solid black;
+    width: 70px;
+    padding-left: 10px;
+    
+}
