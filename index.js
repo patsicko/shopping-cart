@@ -12,20 +12,32 @@ let arrow=document.getElementById("arrow");
 console.log(cart);
 
 let carts=[];
+let itemNumber=carts.length;
+
 function getCart(){
 cart.addEventListener("click",(e)=>{
 carts.push(cart);
 console.log(carts);
 console.log(carts.length);
 let itemNumber=carts.length;
-// item.innerHTML=itemNumber;
 console.log(itemNumber);
 item.innerHTML=itemNumber;
+
 for(let i=0,c=numberList.length; i<c; i++){
-    numberList[itemNumber-1].classList.add("change");
+    let itemNumber=carts.length;
+    numberList[0].classList.add("change");
 }
+
 
 })
 
  } 
  getCart();
+
+
+    arrow.addEventListener("click",(e)=>{
+        numberList[1].classList.add("change");
+       
+     })
+
+    
