@@ -1,1 +1,31 @@
-let arr=[];
+let cart=document.getElementById("body");
+// let number=document.getElementById("number");
+let number=document.querySelectorAll("#number");
+
+console.log(number);
+let numberList=Array.from(number);
+console.log(numberList);
+
+let item=document.getElementById("item");
+let arrow=document.getElementById("arrow");
+
+console.log(cart);
+
+let carts=[];
+function getCart(){
+cart.addEventListener("click",(e)=>{
+carts.push(cart);
+console.log(carts);
+console.log(carts.length);
+let itemNumber=carts.length;
+// item.innerHTML=itemNumber;
+console.log(itemNumber);
+item.innerHTML=itemNumber;
+for(let i=0,c=numberList.length; i<c; i++){
+    numberList[itemNumber-1].classList.add("change");
+}
+
+})
+
+ } 
+ getCart();
