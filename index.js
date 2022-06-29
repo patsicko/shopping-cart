@@ -35,9 +35,30 @@ for(let i=0,c=numberList.length; i<c; i++){
  getCart();
 
 
-    arrow.addEventListener("click",(e)=>{
-        numberList[1].classList.add("change");
-       
-     })
+ arrow.addEventListener("click",()=>{
+    numberList[1].classList.add("change");
+            
+ })
+
+
+ 
+
+//  let clicked=function(){
+//     arrow.addEventListener("click",()=>{
+//         let x=0;
+//         while(clicked){
+//             x=x+1;
+//             numberList[x].classList.add("change");
+            
+//         }
+//     })
+//  }
+//  clicked();
+
+
+
+
+
+
 
     
