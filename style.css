@@ -102,17 +102,9 @@ hr{
     background-color: orange;
 }
 
-.pop{
-    width: 1000px;
-    height:600px ;
-    background-color: rgb(243, 250, 243);
-    position: absolute;
-    top: 425px;
-    left:400px;
-    visibility: hidden;
-
-
-}
 .show{
     visibility: visible;
+}
+.hide{
+    visibility: hidden;
 }

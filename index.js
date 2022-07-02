@@ -1,4 +1,7 @@
 let cart=document.getElementById("body");
+let body=document.getElementById("bd");
+let container=document.getElementById("container");
+let cont=document.getElementById("cont");
 
 
 console.log(cart);
@@ -18,42 +21,77 @@ let pop=document.getElementById("pop");
 let carts=[];
 let itemNumber=carts.length;
 
+let activeStep=0;
+numberList[activeStep].classList.add("change");
+
+
+
 function getCart(){
         
         cart.addEventListener("click",(e)=>{
-        carts.push(cart);
-        console.log(carts);
- 
-        let itemNumber=carts.length;
+               
+                console.log(e.target.getAttribute("data-id"));
+                let currentCart=e.target.getAttribute("data-id");
 
-        item.innerHTML=itemNumber;
+                let check=carts.filter(item=>item==currentCart);
 
-                for(let i=0,c=numberList.length; i<c; i++){
-                    let itemNumber=carts.length;
-                    numberList[0].classList.add("change")
+              
+                if(check.length===0){
+                        carts.push(currentCart);
                 }
+                
+                console.log(check.length);
+
+
+                // let check=carts.filter(function(item){
+                //        return item===currentCart
+
+                // })
+ 
+                let itemNumber=carts.length;
+
+                item.innerHTML=itemNumber;
 
         })
 
 
-arrow.addEventListener("click",()=>{
-    numberList[1].classList.add("change");
-    pop.classList.add("show");
    
-    for(let i=0;i<=itemNumber;i++){
-       
-    pop.innerHTML=carts[i].innerHTML;
-    }
-    console.log(pop.innerHTML);
-  
-            
- })
 
- } 
+
+        
+
+} 
  getCart();
 
 
+ arrow.addEventListener("click",()=>{
+        activeStep++;
+         numberList[activeStep].classList.add("change");
 
+         for(let i=0;i<carts.length;i++){
+
+                if(i==2){
+                const image=document.createElement("img");
+                image.src="cart.png";
+        
+                 cart.innerHTML="";
+                 cart.appendChild(image);}
+                 else{
+                        console.log(carts[i]);
+                 }
+                //  console.log(carts[i]);
+         }
+       
+ 
+        //  body.innerHTML=pop.innerHTML;
+ 
+      
+ 
+ 
+        //  console.log(pop.innerHTML);
+   
+             
+     })
 
  
 
