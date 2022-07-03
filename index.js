@@ -3,7 +3,6 @@ let body=document.getElementById("bd");
 let container=document.getElementById("container");
 let cont=document.getElementById("cont");
 
-
 console.log(cart);
 
 let number=document.querySelectorAll("#number");
@@ -16,8 +15,6 @@ let item=document.getElementById("item");
 let arrow=document.getElementById("arrow");
 let pop=document.getElementById("pop");
 
-
-
 let carts=[];
 let itemNumber=carts.length;
 
@@ -25,71 +22,59 @@ let activeStep=0;
 numberList[activeStep].classList.add("change");
 
 
-
 function getCart(){
         
         cart.addEventListener("click",(e)=>{
                
-                console.log(e.target.getAttribute("data-id"));
-                let currentCart=e.target.getAttribute("data-id");
 
-                let check=carts.filter(item=>item==currentCart);
+                let src=e.target.getAttribute("src");
+                let currentCartId=e.target.getAttribute("data-id");
 
+                let check=carts.filter(item=>item==currentCartId);
+
+                function Image(id,src){
+                        this.id=id;
+                        this.src=src;
+                }
+               
+                let itemObject=new Image(currentCartId,src);
               
                 if(check.length===0){
-                        carts.push(currentCart);
+                        carts.push(itemObject);
                 }
                 
-                console.log(check.length);
+              for(let item in itemObject){
+                console.log(`${item}:${itemObject[item]}`);
+              }
 
+              console.log(carts);
 
-                // let check=carts.filter(function(item){
-                //        return item===currentCart
-
-                // })
- 
+                
                 let itemNumber=carts.length;
 
                 item.innerHTML=itemNumber;
 
-        })
-
-
-   
-
-
-        
+        })       
 
 } 
  getCart();
-
 
  arrow.addEventListener("click",()=>{
         activeStep++;
          numberList[activeStep].classList.add("change");
 
-         for(let i=0;i<carts.length;i++){
 
-                if(i==2){
-                const image=document.createElement("img");
-                image.src="cart.png";
-        
-                 cart.innerHTML="";
-                 cart.appendChild(image);}
-                 else{
-                        console.log(carts[i]);
-                 }
-                //  console.log(carts[i]);
+         cart.innerHTML="";
+         
+         for(let i=0;i<carts.length;i++){
+              let source=carts[i].src;
+
+               cart.innerHTML+=`<img  height="200px" width="200px" src=${source}>`;
+
+               
+             console.log(cart.innerHTML);
          }
-       
  
-        //  body.innerHTML=pop.innerHTML;
- 
-      
- 
- 
-        //  console.log(pop.innerHTML);
-   
              
      })
 
